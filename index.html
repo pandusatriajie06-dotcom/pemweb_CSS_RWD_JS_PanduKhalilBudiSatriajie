@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Informasi Pencemaran Lingkungan</title>
+  <style>
+    :root{
+      --theme-50:#e5c7a1;
+      --theme-100:#d8b58a;
+      --theme-500:#8b5e3c;
+      --theme-700:#6e4a2f;
+      --text-color: brown(--text-color);
+    }
+    body{font-family:Arial;padding:20px;background:var(--theme-50);color:var(--text-color);}    
+    .container{max-width:1000px;margin:auto;}
+    header{padding:18px;border-radius:12px;background:var(--theme-100);}    
+    .intro,.card{background:#fff;border-radius:10px;padding:15px;margin-top:15px;}
+    h3{cursor:pointer;margin:0;}
+    .controls{margin-top:20px;display:flex;gap:10px;}
+    button{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600;}
+    .btn-theme{background:var(--theme-500);color:#fff;}
+    .btn-gallery{background:transparent;color:var(--theme-700);border:2px solid var(--theme-700);}    
+    .hidden{display:none;}
+    body.messy{background:linear-gradient(135deg,#ffd6a5,#fbc2eb);}   
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>IDENTITAS: Pandu Khalil Budi Satriajie</h1>
+    <p>NIM: 202431039</p>
+  </header>
+
+  <section class="intro">
+    <h2>Pengertian Umum Pencemaran Lingkungan</h2>
+    <p>Pencemaran lingkungan adalah masuknya zat atau energi ke lingkungan sehingga kualitasnya menurun.</p>
+  </section>
+
+  <section id="problems">
+    <div class="card"><h3>1. Pencemaran Udara</h3><p>Terjadi akibat emisi kendaraan, pabrik, dan pembakaran liar.</p></div>
+    <div class="card"><h3>2. Pencemaran Air</h3><p>Disebabkan limbah industri, domestik, dan tumpahan minyak.</p></div>
+    <div class="card"><h3>3. Pencemaran Tanah</h3><p>Akibat bahan kimia berbahaya dan limbah pertanian.</p></div>
+    <div class="card"><h3>4. Pencemaran Suara</h3><p>Kebisingan transportasi dan industri mengganggu kesehatan.</p></div>
+    <div class="card"><h3>5. Pencemaran Cahaya</h3><p>Cahaya berlebih mengganggu ritme biologis manusia dan hewan.</p></div>
+    <div class="card"><h3>6. Pencemaran Plastik</h3><p>Sampah plastik merusak ekosistem dan membahayakan satwa.</p></div>
+    <div class="card"><h3>7. Pencemaran Radioaktif</h3><p>Berasal dari kebocoran bahan nuklir dan limbah radioaktif.</p></div>
+  </section>
+
+  <div class="controls">
+    <button id="toggleMode" class="btn-theme">Mode: Rapi</button>
+    <button id="viewGallery" class="btn-gallery">Tampilkan Gambar</button>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.card h3').forEach(h =>{
+    h.onclick = () =>{
+      const p = h.parentElement.querySelector('p');
+      if(!p.classList.contains('hidden')){
+        if(confirm('Apakah Anda ingin menyembunyikan penjelasan ini?')) p.classList.add('hidden');
+      } else {
+        if(confirm('Apakah Anda ingin menampilkan penjelasan ini?')) p.classList.remove('hidden');
+      }
+    }
+  });
+
+  document.getElementById('toggleMode').onclick = ()=>{
+    document.body.classList.toggle('messy');
+    toggleMode.textContent = document.body.classList.contains('messy') ? 'Mode: Berantakan' : 'Mode: Rapi';
+  }
+
+  document.getElementById('viewGallery').onclick = ()=>{
+    location.href = 'gambar.html';
+  }
+</script>
+</body>
+</html>

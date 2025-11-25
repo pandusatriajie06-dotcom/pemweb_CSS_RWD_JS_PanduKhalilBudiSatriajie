@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeri Pencemaran Lingkungan</title>
+  <style>
+    :root{
+      --theme-50:#e5c7a1;
+      --theme-100:#d8b58a;
+      --theme-500:#8b5e3c;
+      --theme-700:#6e4a2f;
+      --text-color:#111;
+    }
+
+    body{
+      margin:0; padding:20px;
+      background:var(--theme-50);
+      color:var(--text-color);
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .container{max-width:1100px;margin:auto;}
+
+    header h1{
+      margin:0;
+      color:var(--theme-700);
+      font-size:1.5rem;
+    }
+    header p{margin:4px 0 0 0;font-weight:bold;}
+
+    .grid{
+      margin-top:20px;
+      display:grid;
+      gap:15px;
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    .card{
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .caption{
+      padding:10px;
+      font-weight:600;
+      color:var(--theme-700);
+    }
+
+    .controls{margin-top:20px;}
+    .btn-back{
+      padding:10px 14px;
+      border-radius:8px;
+      border:2px solid var(--theme-700);
+      background:transparent;
+      cursor:pointer;
+      font-weight:bold;
+      color:var(--theme-700);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px){
+      .grid{grid-template-columns:1fr;}
+      .card img{height:180px;}
+    }
+
+    @media(min-width:600px) and (max-width:992px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(min-width:992px){
+      .grid{grid-template-columns:repeat(3,1fr);}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Galeri Contoh Pencemaran Lingkungan</h1>
+      <p>Pandu Khalil Budi Satriajie | 202431039</p>
+    </header>
+
+    <div class="grid">
+      <div class="card"><img src="assets/pencemaran1.jpg"><div class="caption">Pencemaran Udara</div></div>
+      <div class="card"><img src="assets/pencemaran2.jpg"><div class="caption">Pencemaran Air</div></div>
+      <div class="card"><img src="assets/pencemaran3.jpg"><div class="caption">Pencemaran Tanah</div></div>
+      <div class="card"><img src="assets/pencemaran4.jpg"><div class="caption">Pencemaran Suara</div></div>
+      <div class="card"><img src="assets/pencemaran5.jpg"><div class="caption">Pencemaran Cahaya</div></div>
+      <div class="card"><img src="assets/pencemaran6.jpg"><div class="caption">Pencemaran Plastik</div></div>
+      <div class="card"><img src="assets/pencemaran7.jpg"><div class="caption">Pencemaran Radioaktif</div></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn-back" onclick="history.back()">Kembali</button>
+    </div>
+
+  </div>
+</body>
+</html>
